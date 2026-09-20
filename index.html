@@ -83,7 +83,73 @@ select {
     opacity: 0;
     visibility: hidden;
 }
+/* ===== THAMIL LOGO ANIMATION ===== */
 
+/* Floating motion for entire logo */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 1.9s ease;
+  animation: logoFloat 15s ease-in-out infinite;
+}
+
+.logo-link:hover {
+  transform: scale(2.08) rotate(-1deg);
+}
+
+/* SVG pulse (if used) */
+.logo-svg {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  animation: svgPulse 2.5s ease-in-out infinite;
+}
+
+/* Animated gradient text */
+.logo-text {
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  background: linear-gradient(
+    270deg,
+    #ff3cac,
+    #784ba0,
+    #2b86c5,
+    #00dbde,
+    #ff3cac,
+	#ff4fd8,
+    #8a4fff,
+    #3a7bd5,
+    #00c6ff,
+    #ff4fd8
+
+  );
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradient 5s linear infinite;
+}
+
+/* Keyframes */
+
+@keyframes logoFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes svgPulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.1); }
+}
+
+@keyframes textGradient {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/*
 .loader-logo {
     font-family: "Cormorant Garamond", serif;
     font-size: 42px;
@@ -100,7 +166,7 @@ select {
         opacity: 1;
     }
 }
-
+/*
 
 /* =====================================================
    NAVBAR
